@@ -9,7 +9,9 @@
 `docker compose -f docker-compose.yml -f ./dev/docker-compose.dev.yml up -d`
 to spin up the local Supabase instance.
 
-### 3. Run Create Table Script
+### 3. Login to the local Supabase instance at `http://localhost:8000` with username `supabase` and password `this_password_is_insecure_and_should_be_updated`.
+
+### 4. Run Create Table Script
 
 Once logged in to the dashboard click the link on the left and go to where you can run SQL scripts and run this script below
 
@@ -28,26 +30,26 @@ create table
   ) tablespace pg_default;
 ```
 
-### 4. Go to `Table Editor` icon on the left and select the messages table and turn on real-time. You will see it along the top.
+### 5. Go to `Table Editor` icon on the left and select the messages table and turn on real-time. You will see it along the top.
 
-### 5. Disable `RLS` if your just trying the app out. I will leave it to you to enable `RLS` and choose what permissions are appropiate and who (e.g. `ANON` or `AUTHENTICATED`).
+### 6. Disable `RLS` if your just trying the app out. I will leave it to you to enable `RLS` and choose what permissions are appropiate and who (e.g. `ANON` or `AUTHENTICATED`).
 
-### 6. Go to storage and create a bucket name `chat-pic` and click the toggle to make the permissions `public`.
+### 7. Go to storage and create a bucket name `chat-pic` and click the toggle to make the permissions `public`.
 
-### 7. Create the permissions that would allow `AUTHENTICATED` users to run `SELECT`, `INSERT` AND `DELETE` actions.
+### 8. Create the permissions that would allow `AUTHENTICATED` users to run `SELECT`, `INSERT` AND `DELETE` actions.
 
 ![image info](./buketsettings.png)
 
-### 8. In storage click on `Policies` then `Other policies under storage.objects`
+### 9. In storage click on `Policies` then `Other policies under storage.objects`
 
 Create a couple of policies `INSERT Enable insert for authenticated users only` and 
 `SELECT Enable read access for all users` to get you started.
 
-### 9. Click on the `Authentication` icon on the left horizontal bar and click `Users` and create 2 or more users for the chat application.
+### 10. Click on the `Authentication` icon on the left horizontal bar and click `Users` and create 2 or more users for the chat application.
 
-### 10. In the command line at the root directory install packages with `bun`, `pnpm` or whatever you use.
+### 11. In the command line at the root directory install packages with `bun`, `pnpm` or whatever you use.
 
-### 11. Run the development server:
+### 12. Run the development server:
 
 ```bash
 npm run dev
